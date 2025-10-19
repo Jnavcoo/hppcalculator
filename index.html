@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator HPP & Income</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Tambahkan Chart.js untuk grafik -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Kalkulator HPP & Income</h1>
+        <button id="reset-all" class="reset-btn">Reset Semua Data</button>
+    </header>
+    <main>
+        <section id="input-section">
+            <h2>Input Data</h2>
+            <form id="equipment-form">
+                <h3>Peralatan</h3>
+                <input type="text" id="equipment-name" placeholder="Nama Alat" required>
+                <input type="number" id="equipment-price" placeholder="Harga (Rp)" min="0" required>
+                <input type="number" id="equipment-lifespan" placeholder="Estimasi Umur Pakai (tahun)" min="1" required>
+                <button type="submit">Tambah Peralatan</button>
+                <div id="equipment-error" class="error"></div>
+            </form>
+            <form id="material-form">
+                <h3>Bahan</h3>
+                <input type="text" id="material-name" placeholder="Nama Bahan" required>
+                <input type="number" id="material-price" placeholder="Harga per Unit (Rp)" min="0" required>
+                <input type="number" id="material-usage" placeholder="Jumlah Pemakaian per Produk" min="0" required>
+                <button type="submit">Tambah Bahan</button>
+                <div id="material-error" class="error"></div>
+            </form>
+            <form id="sales-form">
+                <h3>Penjualan</h3>
+                <input type="number" id="sales-quantity" placeholder="Jumlah Terjual" min="0" required>
+                <input type="number" id="sales-price" placeholder="Harga Jual per Unit (Rp)" min="0" required>
+                <button type="submit">Tambah Penjualan</button>
+                <div id="sales-error" class="error"></div>
+            </form>
+            <!-- Tabel daftar data -->
+            <h3>Daftar Data</h3>
+            <table id="equipment-table">
+                <thead><tr><th>Nama Alat</th><th>Harga</th><th>Umur Pakai</th><th>Aksi</th></tr></thead>
+                <tbody></tbody>
+            </table>
+            <table id="material-table">
+                <thead><tr><th>Nama Bahan</th><th>Harga</th><th>Pemakaian</th><th>Aksi</th></tr></thead>
+                <tbody></tbody>
+            </table>
+            <table id="sales-table">
+                <thead><tr><th>Jumlah</th><th>Harga Jual</th><th>Aksi</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section id="dashboard">
+            <h2>Dashboard Laporan</h2>
+            <div id="reports">
+                <p>Total HPP: <span id="hpp-total">0</span> Rp</p>
+                <p>Total Profit: <span id="profit-total">0</span> Rp</p>
+                <p>Total Loss: <span id="loss-total">0</span> Rp</p>
+                <p>Rekomendasi Harga Jual: <span id="recommended-price">0</span> Rp</p>
+                <p>Total Income: <span id="income-total">0</span> Rp</p>
+            </div>
+            <!-- Grafik menggunakan Chart.js -->
+            <canvas id="hpp-chart" width="400" height="200"></canvas>
+        </section>
+    </main>
+    <script src="js/calculations.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
