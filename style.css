@@ -1,0 +1,82 @@
+/* ... (kode sebelumnya tetap sama) ... */
+
+/* Tambahkan animasi dan transisi */
+section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+form {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+button.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.reset-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.reset-btn:hover {
+    background-color: #e67e22;
+}
+
+/* Responsif untuk tabel dan grafik */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.8em;
+    }
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
