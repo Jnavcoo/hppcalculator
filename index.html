@@ -5,23 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator HPP & Income</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Tambahkan Chart.js untuk grafik -->
+    <!-- Tambahkan Google Fonts untuk eye-catching -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Chart.js untuk grafik -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <h1>Kalkulator HPP & Income</h1>
-        <button id="reset-all" class="reset-btn">Reset Semua Data</button>
+        <div class="header-controls">
+            <button id="reset-all" class="reset-btn">
+                <svg class="icon"><use xlink:href="assets/icons.svg#reset-icon"></use></svg> Reset Semua
+            </button>
+            <button id="theme-toggle" class="theme-btn">
+                <svg class="icon"><use xlink:href="assets/icons.svg#sun-icon"></use></svg> Mode Gelap
+            </button>
+        </div>
     </header>
     <main>
-        <section id="input-section">
+        <section id="input-section" class="card">
             <h2>Input Data</h2>
             <form id="equipment-form">
                 <h3>Peralatan</h3>
                 <input type="text" id="equipment-name" placeholder="Nama Alat" required>
                 <input type="number" id="equipment-price" placeholder="Harga (Rp)" min="0" required>
                 <input type="number" id="equipment-lifespan" placeholder="Estimasi Umur Pakai (tahun)" min="1" required>
-                <button type="submit">Tambah Peralatan</button>
+                <button type="submit" class="submit-btn">
+                    <svg class="icon"><use xlink:href="assets/icons.svg#add-icon"></use></svg> Tambah Peralatan
+                </button>
                 <div id="equipment-error" class="error"></div>
             </form>
             <form id="material-form">
@@ -29,14 +40,18 @@
                 <input type="text" id="material-name" placeholder="Nama Bahan" required>
                 <input type="number" id="material-price" placeholder="Harga per Unit (Rp)" min="0" required>
                 <input type="number" id="material-usage" placeholder="Jumlah Pemakaian per Produk" min="0" required>
-                <button type="submit">Tambah Bahan</button>
+                <button type="submit" class="submit-btn">
+                    <svg class="icon"><use xlink:href="assets/icons.svg#add-icon"></use></svg> Tambah Bahan
+                </button>
                 <div id="material-error" class="error"></div>
             </form>
             <form id="sales-form">
                 <h3>Penjualan</h3>
                 <input type="number" id="sales-quantity" placeholder="Jumlah Terjual" min="0" required>
                 <input type="number" id="sales-price" placeholder="Harga Jual per Unit (Rp)" min="0" required>
-                <button type="submit">Tambah Penjualan</button>
+                <button type="submit" class="submit-btn">
+                    <svg class="icon"><use xlink:href="assets/icons.svg#add-icon"></use></svg> Tambah Penjualan
+                </button>
                 <div id="sales-error" class="error"></div>
             </form>
             <!-- Tabel daftar data -->
@@ -54,7 +69,7 @@
                 <tbody></tbody>
             </table>
         </section>
-        <section id="dashboard">
+        <section id="dashboard" class="card">
             <h2>Dashboard Laporan</h2>
             <div id="reports">
                 <p>Total HPP: <span id="hpp-total">0</span> Rp</p>
